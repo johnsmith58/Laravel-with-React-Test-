@@ -15,27 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 // 
 
-Route::get('{reactroute?}', function(){
-    return view('react.index');
-});
-// Route::get('{reactroute?}', 'Test\TestController@view')->name('student.all');
-
-// Route::get('test', function(){
-    
-//     $pfImage =  \Storage::disk('s3')->url('studentProfileImages/1.jpg');
-//     $html = '<img src="' . $pfImage . '" alt="">';
-//     return $html;
-//     dd($pfImage);
-//     return $pfImage;
+//reactjs route
+// Route::get('{reactroute?}', function(){
+//     return view('react.index');
 // });
 
-// Route::get('student', 'StudentController@index');
 
-
+Route::get('/students', 'StudentController@list')->name('student.list');
+Route::post('/students', 'StudentController@store')->name('student.store');
 
 
 // Route::get('/test', 'Test\TestController@index')->name('home');
 
-// Auth::routes();
+Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
