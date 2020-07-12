@@ -24,9 +24,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/students', 'StudentController@list')->name('student.list');
 Route::post('/students', 'StudentController@store')->name('student.store');
 
-
-// Route::get('/test', 'Test\TestController@index')->name('home');
-
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('user-id', function(){
+    $user = \App\StudentPhone::first();
+    $user->update([
+        'student_id' => 'ABC-1DEF',
+        'phone_number' => 'ABC-1DEF'
+    ]);
+    dd($user->toArray());
+});
