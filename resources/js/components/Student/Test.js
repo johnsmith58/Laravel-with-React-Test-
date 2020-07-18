@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from 'react'
 import axios from 'axios'
 import Search from '../Student/Search'
 import { Spinner } from 'react-bootstrap'
+import ReactDOM from 'react-dom'
 
 
 const Test = () => {
@@ -47,3 +48,4 @@ const Test = () => {
 }
 
 export default Test
+ReactDOM.render(<Test />, document.getElementById('example'))
